@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECO-SPARK - E-Waste Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            font : bolder;
+            color: white;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        
+
+        .card {
+            background-color: #fff;
+            margin: 20px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+
+        .card {
+    display: flex;
+    
+    align-items: center;
+    background-color: #fff;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.card img {
+    width: 350px;
+    height: 250px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .newsletter {
+            background-color: #3c3;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            align-items: center;
+          
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2.3em;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        .create-account {
+            margin-top: 20px;
+        }
+
+        .create-account p {
+            margin-top: 20px;
+        }
+
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+.create-account {
+    margin-top: 20px;
+}
+
+.create-account p {
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ECO-SPARK - E-Waste Management</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+    </nav>
+
+    <section>
+        <div class="card">
+            <img src="./loaction.png" alt="Location Detection" class="img-fluid">
+            <h2>Services we provide</h2>
+            <p>"The only way to do great work is to love what you do." - Steve Jobs<br>Our website features a location detection system that accurately identifies your current location, making it easier for you to find the nearest e-waste facilities and dispose of your electronics responsibly.</p>
+        </div>
+
+        <div class="card">
+            <img src="./Nearest facility.jpeg" alt="Nearest Facility Finder" class="img-fluid">
+            <h2>Nearest Facility Finder</h2>
+            <p>"The greatest threat to our planet is the belief that someone else will save it." - Robert Swan<br>Our website features a comprehensive database of e-waste facilities, allowing you to find the nearest facility based on your location and dispose of your electronics responsibly.</p>
+        </div>
+
+        <div class="card">
+            <img src="./earth.jpeg" alt="Environmental Quotes" class="img-fluid">
+            <h2><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiwnfim_f6CAxVz2DgGHWNtCSUQFnoECCwQAQ&url=https%3A%2F%2Fharmony1.com%2Frecycling-sustainability-quotes%2F&usg=AOvVaw3mld8AtH0w9cQgcaJlxVa5&opi=89978449">Environmental Quotes</a></h2>
+            <p>"What we are doing to the forests of the world is but a mirror reflection of what we are doing to ourselves and to one another." - Mahatma Gandhi<br>Our website features a collection of inspirational environmental quotes to motivate and encourage you to do your part in protecting the environment.</p>
+        </div>
+
+        <div class="card">
+            <img src="./login.png" alt="Login and Details" class="img-fluid">
+            <h2>Login and Details</h2>
+            <p>"The best way to predict the future is to create it." - Peter Drucker<br>Our website features a secure login system that allows you to create an account, store your details, and keep track of your e-waste disposal history.</p>
+            <div class="create-account">
+                <p>Don't have an account? <a href="#signup">Sign Up</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h2>Enter Location</h2>
+        <p>Input your location below to find the nearest e-waste facilities:</p>
+        <form>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" class="form-control" id="location" placeholder="Enter your location">
+            </div>
+            <button type="submit" class="btn btn-primary">Find Facilities</button>
+        </form>
+    </section>
+
+    <section class="newsletter">
+        <h2>Sign In Details</h2>
+        <p>If you already have an account, sign in with your details below:</p>
+        <form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign In</button>
+        </form>
+
+        <div class="create-account">
+            <p>Don't have an account? <a href="#signup">Sign Up</a></p>
+        </div>
+    </section>
+    
+    
+    
+    <footer>
+        &copy; 2023 ECO-SPARK - E-Waste Management
+    </footer>
+
+</body>
+</html>
