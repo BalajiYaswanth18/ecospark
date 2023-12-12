@@ -16,14 +16,14 @@
         }
 
         header {
-            background-color: #4CAF50;
-            font : bolder;
+            background-color: #138808;
+            font: bolder;
             color: white;
             padding: 20px;
         }
 
         nav {
-            background-color: #333;
+            background-color: black;
             overflow: hidden;
         }
 
@@ -40,9 +40,9 @@
             color: black;
         }
 
-        
-
         .card {
+            display: flex;
+            align-items: center;
             background-color: #fff;
             margin: 20px;
             padding: 30px;
@@ -51,25 +51,12 @@
             flex: 1;
         }
 
-        .card {
-        display: flex;
-    
-        align-items: center;
-        background-color: #fff;
-        margin: 20px;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        flex: 1;
-}
-
-    .card img {
-        width: 350px;
-        height: 250px;
-        border-radius: 8px;
-        margin-bottom: 20px;
-}
-
+        .card img {
+            width: 350px;
+            height: 250px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
 
         footer {
             background-color: #000;
@@ -82,13 +69,12 @@
         }
 
         .newsletter {
-            background-color: #3c3;
+            background-color: #32CD32;
             margin-top: 20px;
             border-radius: 12px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             flex: 1;
             align-items: center;
-          
         }
 
         .form-group {
@@ -114,125 +100,201 @@
             margin-top: 20px;
         }
 
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
 
+        .loading-spinner {
+            display: none;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #33cc33;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+        }
 
-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin-top: 20px;
-}
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
+        .feedback-message {
+            text-align: center;
+            margin-top: 10px;
+        }
 
-.create-account {
-    margin-top: 20px;
-}
+        .result-section {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
 
-.create-account p {
-    margin-top: 20px;
-}
+        .result-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
 
+        .result-message {
+            font-size: 1.2em;
+        }
+
+        .result-details {
+            margin-top: 15px;
+        }
+
+        .facility-info {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .gmaps-link {
+            color: #2196F3;
+            text-decoration: underline;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>ECO-SPARK - E-Waste Management</h1>
-    </header>
+<header>
+    <h1>ECO-SPARK - E-Waste Management</h1>
+</header>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="./about.html">About</a>
-        <a href="./contact.html">Contact</a>
-    </nav>
+<nav>
+    <a href="#home">Home</a>
+    <a href="./about.html">About</a>
+    <a href="./contact.html">Contact</a>
+</nav>
 
-    <section>
-        <div class="card">
-            <img src="./loaction.png" alt="Location Detection" class="img-fluid">
-            <h2>Services we provide</h2>
-            <p>"The only way to do great work is to love what you do." - Steve Jobs<br>Our website features a location detection system that accurately identifies your current location, making it easier for you to find the nearest e-waste facilities and dispose of your electronics responsibly.</p>
-        </div>
+<section>
+    <div class="card">
+        <img src="./loaction.png" alt="Location Detection" class="img-fluid">
+        <h2>Services we provide</h2>
+        <p>"The only way to do great work is to love what you do." - Steve Jobs<br>Our website features a location
+            detection system that accurately identifies your current location, making it easier for you to find the
+            nearest e-waste facilities and dispose of your electronics responsibly.</p>
+    </div>
 
-        <div class="card">
-            <img src="./Nearest facility.jpeg" alt="Nearest Facility Finder" class="img-fluid">
-            <h2>Nearest Facility Finder</h2>
-            <p>"The greatest threat to our planet is the belief that someone else will save it." - Robert Swan<br>Our website features a comprehensive database of e-waste facilities, allowing you to find the nearest facility based on your location and dispose of your electronics responsibly.</p>
-        </div>
+    <div class="card">
+        <img src="./Nearest facility.jpeg" alt="Nearest Facility Finder" class="img-fluid">
+        <h2>Nearest Facility Finder</h2>
+        <p>"The greatest threat to our planet is the belief that someone else will save it." - Robert Swan<br>Our
+            website features a comprehensive database of e-waste facilities, allowing you to find the nearest facility
+            based on your location and dispose of your electronics responsibly.</p>
+    </div>
 
-        <div class="card">
-            <img src="./earth.jpeg" alt="Environmental Quotes" class="img-fluid">
-            <h2><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiwnfim_f6CAxVz2DgGHWNtCSUQFnoECCwQAQ&url=https%3A%2F%2Fharmony1.com%2Frecycling-sustainability-quotes%2F&usg=AOvVaw3mld8AtH0w9cQgcaJlxVa5&opi=89978449">Environmental Quotes</a></h2>
-            <p>"What we are doing to the forests of the world is but a mirror reflection of what we are doing to ourselves and to one another." - Mahatma Gandhi<br>Our website features a collection of inspirational environmental quotes to motivate and encourage you to do your part in protecting the environment.</p>
-        </div>
+    <div class="card">
+        <img src="./earth.jpeg" alt="Environmental Quotes" class="img-fluid">
+        <h2><a
+                href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiwnfim_f6CAxVz2DgGHWNtCSUQFnoECCwQAQ&url=https%3A%2F%2Fharmony1.com%2Frecycling-sustainability-quotes%2F&usg=AOvVaw3mld8AtH0w9cQgcaJlxVa5&opi=89978449">Environmental
+                Quotes</a></h2>
+        <p>"What we are doing to the forests of the world is but a mirror reflection of what we are doing to ourselves
+            and to one another." - Mahatma Gandhi<br>Our website features a collection of inspirational environmental
+            quotes to motivate and encourage you to do your part in protecting the environment.</p>
+    </div>
 
-        <div class="card">
-            <img src="./login.png" alt="Login and Details" class="img-fluid">
-            <h2>Login and Details</h2>
-            <p>"The best way to predict the future is to create it." - Peter Drucker<br>Our website features a secure login system that allows you to create an account, store your details, and keep track of your e-waste disposal history.</p>
-            <div class="create-account">
-                <p>Don't have an account? <a href="#signup">Sign Up</a></p>
-            </div>
-        </div>
-    </section>
-
-    <section class="newsletter">
-        <h2>Enter Location</h2>
-        <p>Input your location below to find the nearest e-waste facilities:</p>
-        <form>
-            <div class="form-group">
-                <label for="location">Location</label>
-                <input type="text" class="form-control" id="location" placeholder="Enter your location">
-            </div>
-            <button type="submit" class="btn btn-primary">Find Facilities</button>
-        </form>
-    </section>
-
-    <section class="newsletter">
-        <h2>Sign In Details</h2>
-        <p>If you already have an account, sign in with your details below:</p>
-        <form>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter your username">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter your password">
-            </div>
-            <button type="submit" class="btn btn-primary">Sign In</button>
-        </form>
-
+    <div class="card">
+        <img src="./login.png" alt="Login and Details" class="img-fluid">
+        <h2>Login and Details</h2>
+        <p>"The best way to predict the future is to create it." - Peter Drucker<br>Our website features a secure login
+            system that allows you to create an account, store your details, and keep track of your e-waste disposal
+            history.</p>
         <div class="create-account">
             <p>Don't have an account? <a href="#signup">Sign Up</a></p>
         </div>
-    </section>
-    
-    <script>
-       
-        function login() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
+    </div>
+</section>
 
-          
-            if (username === "yourUsername" && password === "yourPassword") {
-                alert("Login successful!");
-            } else {
-                alert("Invalid username or password");
-            }
+<section class="newsletter">
+    <h2>Enter Location</h2>
+    <p>Input your location below to find the nearest e-waste facility:</p>
+    <form onsubmit="findFacilities(); return false;">
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" placeholder="Enter your location">
+        </div>
+        <button type="submit" class="btn btn-primary">Find Facilities</button>
+    </form>
+
+    <div id="result-container"></div>
+</section>
+
+<section class="newsletter">
+    <h2>Sign In Details</h2>
+    <p>If you already have an account, sign in with your details below:</p>
+    <form id="loginForm" onsubmit="login(); return false;">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+        </div>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+    </form>
+
+    <div class="create-account">
+        <p>Don't have an account? <a href="#signup">Sign Up</a></p>
+    </div>
+</section>
+
+<footer>
+    &copy; 2023 ECO-SPARK - E-Waste Management
+</footer>
+
+
+<!-- ... (remaining content) ... -->
+
+<script>
+    const pinDetails = [
+        { pin: '500013', name: 'RECYCLE ONE', address: '16-9-406/A/54/1, old malakpet, near zaqriya mosque, Wahed Nagar, Amberpet, Hyderabad, Telangana 500036', phone: '08886004447', availability: '10AM to 5PM-Monday to Saturday', gmaps: 'https://www.google.com/maps/place/RECYCLE+ONE/@17.485123,78.3917145,12z/data=!4m9!1m2!2m1!1se+aste+locators+kukatpally!3m5!1s0x3bcb9941566b1a07:0xaca59e61776fadad!8m2!3d17.3848558!4d78.5035696!16s%2Fg%2F11kpv_9fc8?entry=ttu' },
+        { pin: '500004', name: '', address: 'Telangana, Hyderabad', phone: '(Provide Phone Number)', availability: '(Provide Availability)', gmaps: '(Provide Gmaps Location)' },
+        { pin: '500045', name: '', address: 'Telangana, Hyderabad', phone: '(Provide Phone Number)', availability: '(Provide Availability)', gmaps: '(Provide Gmaps Location)' },
+        // Add more entries for other PIN codes...
+    ];
+
+    function findFacilities() {
+        const locationInput = document.getElementById("location");
+        const location = locationInput.value.trim();
+
+        const resultContainer = document.getElementById("result-container");
+        resultContainer.innerHTML = ""; // Clear previous result
+
+        const result = findNearestFacility(location);
+        if (result) {
+            resultContainer.innerHTML = "<div class='result-section'>" +
+                "<div class='result-title'>Results</div>" +
+                "<div class='result-message'><p>" + result.name + "</p></div>" +
+                "<div class='result-details'>" +
+                "<div class='facility-info'><strong>Address:</strong> " + result.address + "</div>" +
+                "<div class='facility-info'><strong>Phone Number:</strong> " + result.phone + "</div>" +
+                "<div class='facility-info'><strong>Availability:</strong> " + result.availability + "</div>" +
+                "<div class='facility-info'><strong>Gmaps Location:</strong> <a href='" + result.gmaps + "' target='_blank' class='gmaps-link'>Open in Google Maps</a></div>" +
+                "</div>" +
+                "</div>";
+        } else {
+            resultContainer.innerHTML = "<p>No matching facility found for the entered location.</p>";
         }
 
-        
-        function findFacilities() {
-            var location = document.getElementById("location").value;
-            alert("Searching for facilities near " + location);
-        }
-    </script>
-    
-    <footer>
-        &copy; 2023 ECO-SPARK - E-Waste Management
-    </footer>
+        locationInput.value = ""; // Clear the input field
+    }
+
+    function findNearestFacility(location) {
+        const nearestFacility = pinDetails.find(entry => entry.pin === location);
+        return nearestFacility;
+    }
+</script>
 
 </body>
 </html>
