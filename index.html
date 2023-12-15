@@ -162,6 +162,80 @@
             text-decoration: underline;
             cursor: pointer;
         }
+
+        footer {
+        background-color: #000;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        /* Remove the 'position' and 'bottom' properties */
+        /* position: fixed;
+        bottom: 0; */
+        width: 100%;
+        }
+
+        .olx-section {
+            background-color:#C1F2B0;
+            color: #333;
+            padding: 20px;
+            text-align: center;  
+        }
+
+        .olx-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .olx-section p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .olx-link {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .olx-link:hover {
+            background-color: #45a049;
+        }
+
+        .quote-section {
+            background-color: #98b921; /* Green color */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .quote-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .quote-section p {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+        }
+
+        .quote-text {
+            font-family: 'Verdana', sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            margin: 0;
+        }
+    </style>
+
+        
     </style>
 </head>
 <body>
@@ -175,6 +249,19 @@
     <a href="./about.html">About</a>
     <a href="./contact.html">Contact</a>
 </nav>
+
+<section class="quote-section">
+    <h2>Inspiration for a Sustainable Future</h2>
+    <p>Embrace the power of change and make a positive impact on the environment.</p>
+    <p class="quote-text">"The Earth does not belong to us: we belong to the Earth." - Marlee Matlin</p>
+</section>
+
+<section class="olx-section">
+    <h2>Is your electronic device still working?</h2>
+    <p>If yes, consider selling it on OLX and contribute to the reuse of electronic devices.</p>
+    <a href="https://www.olx.com" target="_blank" class="olx-link">Sell on OLX</a>
+</section>
+
 
 <section>
     <div class="card">
@@ -215,6 +302,8 @@
     </div>
 </section>
 
+
+
 <section class="newsletter">
     <h2>Enter Location</h2>
     <p>Input your location below to find the nearest e-waste facility:</p>
@@ -252,6 +341,7 @@
 <footer>
     &copy; 2023 ECO-SPARK - E-Waste Management
 </footer>
+
 
 
 <!-- ... (remaining content) ... -->
@@ -301,9 +391,22 @@
     }
 
     function findNearestFacility(location) {
-        const nearestFacility = pinDetails.find(entry => entry.pin === location);
-        return nearestFacility;
+    const sanitizedLocation = location.toLowerCase(); // Convert input to lowercase for case-insensitive comparison
+    const nearestFacility = pinDetails.find(entry => entry.pin.includes(sanitizedLocation));
+    return nearestFacility;
+}
+
+</script>
+
+<script>
+    function redirectToOLX() {
+        // You can customize this function based on your criteria for redirecting to OLX.
+        // For now, let's assume it always redirects.
+        window.location.href = "https://www.olx.com";
     }
+
+    
+    // ... (your existing script content) ...
 </script>
 
 </body>
