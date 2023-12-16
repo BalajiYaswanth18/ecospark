@@ -3,148 +3,422 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clover Hospital Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap" rel="stylesheet">
-    
+    <title>ECO-SPARK - E-Waste Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #72d50fa9; /* Light blue background color */
-            font-family: 'Muli', sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
             margin: 0;
             padding: 0;
             text-align: center;
         }
 
-        .main-container {
+        header {
+            background-color: #138808;
+            font: bolder;
+            color: white;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: black;
+            overflow: hidden;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .card {
             display: flex;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        .form-container {
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-
-        .form-body {
-            margin-bottom: 20px;
-        }
-
-        .title {
-            color: #240628; /* Dark purple title color */
-        }
-
-        .social-login ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
-        .social-login li {
+            background-color: #fff;
+            margin: 20px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             flex: 1;
         }
 
-        .social-login li a {
-            display: block;
-            padding: 10px;
-            background-color: #072251; /* Dark blue button background color */
+        .card img {
+            width: 350px;
+            height: 250px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #000;
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .social-login li a:hover {
-            background-color: #240628; /* Dark purple button background color on hover */
-        }
-
-        ._or {
-            color: #072251; /* Dark blue color for "or" */
-            font-weight: bold;
-            margin: 20px 0;
-        }
-
-        .the-form label {
-            display: block;
-            text-align: left;
-            margin-bottom: 5px;
-            color: #072251; /* Dark blue label color */
-        }
-
-        .the-form input {
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #072251; /* Dark blue border */
-            border-radius: 5px;
         }
 
-        .the-form input[type="submit"] {
-            background-color: #072251; /* Dark blue submit button background color */
+        .newsletter {
+            background-color: #32CD32;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            align-items: center;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2.3em;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        .create-account {
+            margin-top: 20px;
+        }
+
+        .create-account p {
+            margin-top: 20px;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .loading-spinner {
+            display: none;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #33cc33;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .feedback-message {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .result-section {
+            background-color: #4CAF50;
             color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .result-message {
+            font-size: 1.2em;
+        }
+
+        .result-details {
+            margin-top: 15px;
+        }
+
+        .facility-info {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .gmaps-link {
+            color: #2196F3;
+            text-decoration: underline;
             cursor: pointer;
         }
 
-        .the-form input[type="submit"]:hover {
-            background-color: #240628; /* Dark purple submit button background color on hover */
+        footer {
+        background-color: #000;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        /* Remove the 'position' and 'bottom' properties */
+        /* position: fixed;
+        bottom: 0; */
+        width: 100%;
         }
 
-        .form-footer a {
-            color: #072251; /* Dark blue link color */
+        .olx-section {
+            background-color:#C1F2B0;
+            color: #333;
+            padding: 20px;
+            text-align: center;  
+        }
+
+        .olx-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .olx-section p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .olx-link {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
             text-decoration: none;
-            font-weight: bold;
+            font-size: 1.2em;
+            border-radius: 8px;
+            transition: background-color 0.3s;
         }
 
-        .form-footer a:hover {
-            text-decoration: underline;
+        .olx-link:hover {
+            background-color: #45a049;
         }
+
+        .quote-section {
+            background-color: #98b921; /* Green color */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .quote-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .quote-section p {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+        }
+
+        .quote-text {
+            font-family: 'Verdana', sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            margin: 0;
+        }
+    </style>
+
+        
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <div class="form-container">
+<header>
+    <h1>ECO-SPARK - E-Waste Management</h1>
+</header>
 
-            <div class="form-body">
-                <h2 class="title">Log in to Clover Hospital</h2>
-                <div class="social-login">
-                    <ul>
-                        <li class="google"><a href="#">Google</a></li>
-                        <li class="fb"><a href="#">Facebook</a></li>
-                    </ul>
-                </div>
+<nav>
+    <a href="#home">Home</a>
+    <a href="./about.html">About</a>
+    <a href="./contact.html">Contact</a>
+</nav>
 
-                <div class="_or">or</div>
+<section class="quote-section">
+    <h2>Inspiration for a Sustainable Future</h2>
+    <p>Embrace the power of change and make a positive impact on the environment.</p>
+    <p class="quote-text">"The Earth does not belong to us: we belong to the Earth." - Marlee Matlin</p>
+</section>
 
-                <!-- Updated form with action attribute -->
-                <form action="home.html" method="GET" class="the-form">
+<section class="olx-section">
+    <h2>Is your electronic device still working?</h2>
+    <p>If yes, consider selling it on OLX and contribute to the reuse of electronic devices.</p>
+    <a href="https://www.olx.com" target="_blank" class="olx-link">Sell on OLX</a>
+</section>
 
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Enter your email">
 
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Enter your password">
+<section>
+    <div class="card">
+        <img src="./loaction.png" alt="Location Detection" class="img-fluid">
+        <h2>Services we provide</h2>
+        <p>"The only way to do great work is to love what you do." - Steve Jobs<br>Our website features a location
+            detection system that accurately identifies your current location, making it easier for you to find the
+            nearest e-waste facilities and dispose of your electronics responsibly.</p>
+    </div>
 
-                    <input type="submit" value="Log In">
+    <div class="card">
+        <img src="./Nearest facility.jpeg" alt="Nearest Facility Finder" class="img-fluid">
+        <h2>Nearest Facility Finder</h2>
+        <p>"The greatest threat to our planet is the belief that someone else will save it." - Robert Swan<br>Our
+            website features a comprehensive database of e-waste facilities, allowing you to find the nearest facility
+            based on your location and dispose of your electronics responsibly.</p>
+    </div>
 
-                </form>
+    <div class="card">
+        <img src="./earth.jpeg" alt="Environmental Quotes" class="img-fluid">
+        <h2><a
+                href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiwnfim_f6CAxVz2DgGHWNtCSUQFnoECCwQAQ&url=https%3A%2F%2Fharmony1.com%2Frecycling-sustainability-quotes%2F&usg=AOvVaw3mld8AtH0w9cQgcaJlxVa5&opi=89978449">Environmental
+                Quotes</a></h2>
+        <p>"What we are doing to the forests of the world is but a mirror reflection of what we are doing to ourselves
+            and to one another." - Mahatma Gandhi<br>Our website features a collection of inspirational environmental
+            quotes to motivate and encourage you to do your part in protecting the environment.</p>
+    </div>
 
-            </div>
-
-            <div class="form-footer">
-                <div>
-                    <span>Don't have an account?</span> <a href="#">Sign Up</a>
-                </div>
-            </div>
+    <div class="card">
+        <img src="./login.png" alt="Login and Details" class="img-fluid">
+        <h2>Login and Details</h2>
+        <p>"The best way to predict the future is to create it." - Peter Drucker<br>Our website features a secure login
+            system that allows you to create an account, store your details, and keep track of your e-waste disposal
+            history.</p>
+        <div class="create-account">
+            <p>Don't have an account? <a href="#signup">Sign Up</a></p>
         </div>
     </div>
+</section>
+
+
+
+<section class="newsletter">
+    <h2>Enter pincode</h2>
+    <p>Input your location below to find the nearest e-waste facility:</p>
+    <form onsubmit="findFacilities(); return false;">
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" placeholder="Enter your location">
+        </div>
+        <button type="submit" class="btn btn-primary">Find Facilities</button>
+    </form>
+
+    <div id="result-container"></div>
+</section>
+
+<section class="newsletter">
+    <h2>Sign In Details</h2>
+    <p>If you already have an account, sign in with your details below:</p>
+    <form id="loginForm" onsubmit="login(); return false;">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+        </div>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+    </form>
+
+    <div class="create-account">
+        <p>Don't have an account? <a href="#signup">Sign Up</a></p>
+    </div>
+</section>
+
+<footer>
+    &copy; 2023 ECO-SPARK - E-Waste Management
+</footer>
+
+
+
+<!-- ... (remaining content) ... -->
+
+<script>
+    const pinDetails = [
+        { pin: '500013', name: 'RECYCLE ONE', address: '16-9-406/A/54/1, old malakpet, near zaqriya mosque, Wahed Nagar, Amberpet, Hyderabad, Telangana 500036', phone: '08886004447', availability: '10AM to 5PM-Monday to Saturday', gmaps: 'https://www.google.com/maps/place/RECYCLE+ONE/@17.485123,78.3917145,12z/data=!4m9!1m2!2m1!1se+aste+locators+kukatpally!3m5!1s0x3bcb9941566b1a07:0xaca59e61776fadad!8m2!3d17.3848558!4d78.5035696!16s%2Fg%2F11kpv_9fc8?entry=ttu' },
+        { pin: '500005', name: 'Ramky Ewaste Recycling Facility', address: '25/A, Hardware Park, Srisailam Highway Road, Hyderabad, Telangana 500005, Kurmaguda, Hyderabad - 500059 (Near International Airport)', phone: '07947105282', availability: 'Mon - Sat:- 9:30 am - 6:30 pm', gmaps: 'https://www.google.com/maps/place/ELECTRICAL+ROOM,+HARDWARE+PARK,+Kurmalguda,+Telangana+500005/@17.3748911,78.3233541,11z/data=!4m17!1m10!4m9!1m4!2m2!1d78.4859136!2d17.5107938!4e1!1m3!2m2!1d78.482247!2d17.24277!3m5!1s0x3bcba3561574a1e7:0x32637b21c352189a!8m2!3d17.2427625!4d78.4822316!16s%2Fg%2F11j7xl36_5?entry=ttu' },
+        { pin: '500084', name: 'Global traders scrap buyer', address: '2-41/5/1, Ghousia Masjid Rd, Vinayaka Nagar, HITEC City, Khanammet, Hyderabad, Telangana 500084', phone: '080 4513 4312', availability: '8AM to 7PM-Monday to Saturday', gmaps: 'https://www.google.com/maps/place/E+WASTE+RECYCLING/@17.4639192,78.3762727,15z/data=!4m6!3m5!1s0x3bcb933b79b65863:0x8ddd4882dd46e9e9!8m2!3d17.4639192!4d78.3762727!16s%2Fg%2F11lfcrctq9?entry=ttu' },
+        { pin: '500032', name: 'E-WASTE EXCHANGE', address: 'IIITH HIMALAYA ROAD, GACHIBOWLI,  Hyderabad, Telangana 500032', phone: '08874299358', availability: '10AM to 6PM-Monday to Friday', gmaps: 'https://www.google.com/maps/place/E-WASTE+EXCHANGE/@17.4455819,78.3490651,15z/data=!4m2!3m1!1s0x0:0x982f8997a998b708?sa=X&ved=2ahUKEwiP17uEhoWDAxX7SmwGHRqHAAEQ_BJ6BAgOEAA&hl=en-GB'},
+        { pin: '500020', name: 'GLOBAL TRADERS', address: '1-4-651, , Bholakpur Musheerabad, Telangana, Hyderabad', phone: '08045134312', availability: 'Monday	8 am–7 pm,Tuesday	8 am–7:30 pm,Wednesday	8 am–7:30 pm,Thursday	8 am–7 pm,Friday	8 am–7 pm,Saturday	8 am–7 pm,Sunday	8 am–7:30 pm', gmaps: 'https://www.google.com/maps/dir//2-41%2F5%2F1,+Ghousia+Masjid+Rd,+Vinayaka+Nagar,+HITEC+City,+Khanammet,+Hyderabad,+Telangana+500084/@17.4639022,78.2938709,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb933b79b65863:0x8ddd4882dd46e9e9!2m2!1d78.3762727!2d17.4639192?entry=ttu' },
+        { pin: '500072', name: 'Pure Earth Recyclers Pvt. Ltd', address: 'Plot No, 167c, opp. JNTU, Addagutta Society, Western Hills, Jal Vayu Vihar, Kukatpally, Hyderabad, Telangana', phone: '7032082399', availability: '10AM to 5PM-Monday to Saturday', gmaps: 'https://www.google.com/maps/dir//Pure+Earth+Recyclers+Pvt.+Ltd+%7C+Enterprise+ITAD+%7C+Govt.+Authorized+E-waste+Recycler+and+Refurbisher.+Plot+No+167c,+opp.+JNTU,+Addagutta+Society,+Western+Hills,+Jal+Vayu+Vihar,+Kukatpally+Hyderabad,+Telangana+500072/@17.495657,78.3956912,11.38z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb91edd1bc22fd:0x6b90a435b8576aaa!2m2!1d78.397175!2d17.501406?entry=ttu' },
+        { pin: '500032', name: 'E-Waste Recycling process company', address: '79, Indira Nagar, Gachibowli, Hyderabad, Telangana', phone: ' 099665 55719', availability: '24 hours-Monday to Sunday', gmaps: 'https://www.google.com/maps/dir//79,+Indira+Nagar,+Gachibowli,+Hyderabad,+Telangana+500032/@17.4376758,78.2748117,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0xa43da5119378316b:0x2ce582e23d32b0f1!2m2!1d78.3572135!2d17.4376927?entry=ttu' },
+        { pin: '500005', name: 'Re Sustainability and Recycling Pvt Limited', address: '25/A, Hardware Park, Srisailam Highway Road Kurmaguda, near International Airport, Hyderabad, Telangana', phone: '090321 24522', availability: '9:30AM to 6:30PM-Monday to Saturday', gmaps: 'https://www.google.com/maps/dir//25%2FA,+Hardware+Park,+Srisailam+Highway+Road+Kurmaguda,+near+International+Airport,+Hyderabad,+Telangana+500005/@17.2428563,78.4001828,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcba3561570ebc3:0x501792f65decf070!2m2!1d78.4825846!2d17.2428731?entry=ttu' },
+        { pin: '500004', name: 'S D Recycling Process Industries E Waste', address: ' near Income Tex Tower, AC Guards, Lakdikapul, Hyderabad, Telangana ', phone: '088585 42674', availability: 'Open 24 hours-Monday to Sunday', gmaps: 'https://www.google.com/maps/dir//17.3979368,78.4574329/@17.3979368,78.4574329,16z?entry=ttu' },
+        { pin: '501505', name: 'Megha Ewaste Management', address: 'PLot no 14 Telangana Padmavathi Colony Anmagal Road No 3, Hayathnagar_Khalsa, Telangana', availability: 'Open 24 hours-Monday to Sunday', gmaps: 'https://www.google.com/maps?rlz=1C1VDKB_enIN1057IN1057&sca_esv=589766361&lqi=CiFzb3V0aCBoeWRlcmFiYWQgZSB3YXN0ZSBsb2NhdGlvbnNaGSIXc291dGggaHlkZXJhYmFkIGUgd2FzdGWSARByZWN5Y2xpbmdfY2VudGVyqgFMEAEqCyIHZSB3YXN0ZSgAMh4QASIaa5d2YAgl_FIZgLHXsXdVpotPGBdUx5J4NSAyGxACIhdzb3V0aCBoeWRlcmFiYWQgZSB3YXN0ZQ&vet=12ahUKEwj7s9uLx4eDAxV-a2wGHUI_DLYQ8UF6BAgYEFg..i&lei=cRd3Zbu3G_7WseMPwv6wsAs&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=Kd3el6jnocs7MczvvQywq8Ab&daddr=PLot+no+14+Telangana+Padmavathi+Colony+Anmagal+Road+No+3,+Hayathnagar_Khalsa,+Telangana+501505' },
+        { pin: '500084', name: 'E WASTE RECYCLING', address: ' 2-41/5/1, Ghousia Masjid Rd, Vinayaka Nagar, HITEC City, Khanammet, Hyderabad, Telangana ', phone: '080 4513 4312', availability: '8am-7pm-Monday to Sunday', gmaps: 'https://www.google.com/maps/dir//E+WASTE+RECYCLING,+2-41%2F5%2F1,+Ghousia+Masjid+Rd,+HITEC+City,+Khanammet,+Telangana+500084/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bcb933b79b65863:0x8ddd4882dd46e9e9?sa=X&ved=2ahUKEwiWn4CM0pCDAxW7d2wGHajdD68Q48ADegQIDRAA' },
+        { pin: '500080', name: 'Electronic Scrap Dealers', address: ' 4-308/3/b, Musheerabad, Bhagyalaxmi Nagar, Bhoiguda, Hyderabad, Telangana ', phone: ' 080 4803 4829', availability: '7am-8:30pm-Monday to Sunday', gmaps: 'https://www.google.com/maps/dir//Electronic+Scrap+Dealers,+4-308%2F3%2Fb,+Musheerabad,+Bhoiguda,+Hyderabad,+Telangana+500080/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bcb998cdaaaaaab:0xdb994bb1c8cf384e?sa=X&ved=2ahUKEwiWn4CM0pCDAxW7d2wGHajdD68Q48ADegQICRAA' },
+        { pin: '500049', name: 'Waste Ventures India', address: '30, Bollaram Rd, KBR Colony, Bachupally, Miyapur, Hyderabad, Telangana', phone: '0360 782 7887', availability: 'Friday	9 am–6 pm,Saturday	Closed,Sunday	Closed,Monday	9 am–6 pm,Tuesday	9 am–6 pm,Wednesday	9 am–6 pm,Thursday	9 am–6 pm', gmaps: 'https://www.google.com/maps/dir//30,+Bollaram+Rd,+KBR+Colony,+Bachupally,+Miyapur,+Hyderabad,+Telangana+500049/@17.5351942,78.2736897,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb8d8ddd7880cf:0xc6871cedf119a49b!2m2!1d78.3560914!2d17.5352109?entry=ttu' },
+        { pin: '500084', name: 'Zolopik', address: '1, H.No: 3-7/38, Khaswa Enclave, Marva Road, Narsingi, Hyderabad, Telangana', phone: '097434 40440', availability: '9am to 6pm-Monday to Sunday', gmaps: 'https://www.google.com/maps/dir//1,+H.No:+3-7%2F38,+Khaswa+Enclave,+Marva+Road,+Narsingi,+Hyderabad,+Telangana+500075/@17.3860172,78.2818276,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb95a47d28fd7f:0x22e4a64faad100a0!2m2!1d78.3642294!2d17.3860341?entry=ttu'},
+        { pin: '500020', name: 'E-Waste Recycler And Traders', address: 'Musheerabad, Bholakpur, Bhoiguda, Secunderabad, Hyderabad, Telangana', availability: 'Open 9AM to 9PM-Monday to Sunday', gmaps: 'https://www.google.com/maps/dir//Musheerabad,+Bholakpur,+Bhoiguda,+Secunderabad,+Hyderabad,+Telangana+500020/@17.4191606,78.4122804,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb99cefdf1f1b9:0xcda2ea21637d298e!2m2!1d78.4946822!2d17.4191775?entry=ttu' },
+        { pin: '500066', name: 'Envirokare Recycling Solutions Private Limited', address: 'A, 48, A.S.Raju Nagar, Vivekananda Nagar, Kukatpally, Hyderabad, Telangana ', phone: '098852 07171',gmaps: 'https://www.google.com/maps?rlz=1C1VDKB_enIN1057IN1057&sca_esv=589766361&lqi=CiFzb3V0aCBoeWRlcmFiYWQgZSB3YXN0ZSBsb2NhdGlvbnNaGSIXc291dGggaHlkZXJhYmFkIGUgd2FzdGWSARh3YXN0ZV9tYW5hZ2VtZW50X3NlcnZpY2WqAWEKCC9tLzA5YzZ3CgkvbS8wYjU2ODAQASoLIgdlIHdhc3RlKAAyHhABIhprl3ZgCCX8UhmAsdexd1Wmi08YF1THkng1IDIbEAIiF3NvdXRoIGh5ZGVyYWJhZCBlIHdhc3Rl&vet=12ahUKEwj7s9uLx4eDAxV-a2wGHUI_DLYQ8UF6BAgYEFg..i&lei=cRd3Zbu3G_7WseMPwv6wsAs&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KSvdpcfKkcs7MQdbYbbXMqwa&daddr=A,+48,+A.S.Raju+Nagar,+Vivekananda+Nagar,+Kukatpally,+Hyderabad,+Telangana+500066' },
+        { pin: '500050', name: 'E-WASTE RECYCLING TELANGANA |SCARP METAL DEALERS', address: '10-134/A Chanda Nagar vimikunta,near church,serilingampalle(M),Telangana 500050', phone:'06301889024',availability :'Friday 12 am–8:30 pm Saturday 8 am–9 pm Sunday 7 am–7:30 pm Monday 8 am–8:30pm Tuesday 8 am–8:30 pm Wednesday 8 am–8:30 pm Thursday 9 am–7 pm',gmaps:'https://maps.google.com/maps/place//data=!4m2!3m1!1s0x3bcb937f892d8d1f:0x8d456a4b22df2836?entry=s&sa=X&ved=2ahUKEwjBjtvjy4eDAxUhSGwGHdzwAscQ4kB6BAgDEAA'}, 
+        { pin: '500034', name: 'Z Enviro Industries Pvt Ltd', address: 'Road No. 12, NBT Nagar, Banjara Hills, Hyderabad, Telangana', phone: '040 6522 2259', availability: 'Opens 9am to 6pm-Monday to Sunday', gmaps: 'https://www.google.com/maps/dir//Road+No.+12,+NBT+Nagar,+Banjara+Hills,+Hyderabad,+Telangana+500034/@17.4098834,78.3542974,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb972437973aab:0xd98bfbf47d367f9!2m2!1d78.4366992!2d17.4099003?entry=ttu' },
+        { pin: '500089', name: 'ELifecycle Management Pvt Ltd (ELIMA)', address: '502 , 5th floor , Siri Sampadha Arcade III, near Andhra Bank, Madhura Nagar Colony, Gachibowli, Hyderabad, Telangana', phone: '090321 24522', availability: '9:30am to 6:30pm-Monday to Saturday', gmaps: 'https://www.google.com/maps/dir//502+,+5th+floor+,+Siri+Sampadha+Arcade+III,+near+Andhra+Bank,+Madhura+Nagar+Colony,+Gachibowli,+Hyderabad,+Telangana+500089/@17.4196228,78.292681,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb956357176821:0x2973505b56d2145a!2m2!1d78.3750828!2d17.4196397?entry=ttu'},
+        { pin: '500033', name: 'Waste Management Solutions Pvt Ltd', address: ' 2nd Floor, Anitha Enclave, Road Number 10, behind Southern Spice Restaurant, Jubilee Hills, Hyderabad, Telangana', phone: ' 076111 19999', gmaps: 'https://www.google.com/maps/dir//2nd+Floor,+Anitha+Enclave,+Road+Number+10,+behind+Southern+Spice+Restaurant,+Jubilee+Hills,+Hyderabad,+Telangana+500033/@17.4329521,78.3349963,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb913033bbdc61:0x19bd701613559bce!2m2!1d78.4173981!2d17.432969?entry=ttu'},
+        { pin: '500055', name: 'enviro collection', address: 'Sy. No. 298 Part, 2/A, Plot No. 1-185, Phase 1 Rd, IDA Jeedimetla, Madhura Nagar, Nizampet, Hyderabad, Telangana', phone: '040 4020 2071', gmaps: 'https://www.google.com/maps?rlz=1C1VDKB_enIN1057IN1057&sca_esv=591053097&lqi=CiJlIHdhc3RlIGxvY2F0b3JzIGF0IGVhc3QgaHlkZXJhYmFkWiQiImUgd2FzdGUgbG9jYXRvcnMgYXQgZWFzdCBoeWRlcmFiYWSSARByZWN5Y2xpbmdfY2VudGVyqgFpEAEqHCIYZSB3YXN0ZSBsb2NhdG9ycyBhdCBlYXN0KAAyHxABIhsnclKrRnx782BGv3ptV00frGewZxUtb2pWl8QyJhACIiJlIHdhc3RlIGxvY2F0b3JzIGF0IGVhc3QgaHlkZXJhYmFk&vet=12ahUKEwjS1eK915CDAxV1VmwGHcjoBswQ8UF6BAgYEFg..i&lei=l-B7ZZKuAvWsseMPyNGb4Aw&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KWPaouADjss7MRfOMSjuTpO8&daddr=Sy.+No.+298+Part,+2/A,+Plot+No.+1-185,+Phase+1+Rd,+IDA+Jeedimetla,+Madhura+Nagar,+Nizampet,+Hyderabad,+Telangana+500055'},
+        { pin: '500043', name: 'Hyderabad waste management Project', address: 'H9VQ+698, Sambhupur, Telangana', phone: '090001 42012', availability: 'Opens 24 hours-Monday to Sunday', gmaps: 'https://www.google.com/maps/dir//H9VQ%2B698,+Sambhupur,+Telangana+500043/@17.5930234,78.3060461,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb8fa0ee46c15d:0x4a1fbf976da359c4!2m2!1d78.3884509!2d17.5931281?entry=ttu' },
+        { pin: '500075', name: 'ZOLOPIK', address: '1,H.NO:3-7/38,khaswa enclave,Marva road,Narsingi,  Hyderabad, Telangana 500075', phone: '09743440440', availability: '9AM to 6PM-Monday to Sunday', gmaps: 'https://maps.google.com/maps/place//data=!4m2!3m1!1s0x3bcb95a47d28fd7f:0x22e4a64faad100a0?entry=s&sa=X&ved=2ahUKEwj1xdnu4IeDAxV8bmwGHXE9DGgQ4kB6BAgDEAA&hl=en-in'},
+        { pin: '506350', name: 'Lenin', address: '3-39,Yadav nagar,warangal ,Warangal , Telangana 506350', phone: '9984342894', availability: '9AM to 6PM-Monday to Sunday', gmaps: 'https://maps.google.com/maps/place//data=!4m2!3m1!1s0x3bcb95a47d28fd7f:0x22e4a64faad100a0?entry=s&sa=X&ved=2ahUKEwj1xdnu4IeDAxV8bmwGHXE9DGgQ4kB6BAgDEAA&hl=en-in'}
+
+    ];
+
+    function findFacilities() {
+        const locationInput = document.getElementById("location");
+        const location = locationInput.value.trim();
+
+        const resultContainer = document.getElementById("result-container");
+        resultContainer.innerHTML = ""; // Clear previous result
+
+        const result = findNearestFacility(location);
+        if (result) {
+            resultContainer.innerHTML = "<div class='result-section'>" +
+                "<div class='result-title'>Results</div>" +
+                "<div class='result-message'><p>" + result.name + "</p></div>" +
+                "<div class='result-details'>" +
+                "<div class='facility-info'><strong>Address:</strong> " + result.address + "</div>" +
+                "<div class='facility-info'><strong>Phone Number:</strong> " + result.phone + "</div>" +
+                "<div class='facility-info'><strong>Availability:</strong> " + result.availability + "</div>" +
+                "<div class='facility-info'><strong>Gmaps Location:</strong> <a href='" + result.gmaps + "' target='_blank' class='gmaps-link'>Open in Google Maps</a></div>" +
+                "</div>" +
+                "</div>";
+        } else {
+            resultContainer.innerHTML = "<p>No matching facility found for the entered location.</p>";
+        }
+
+        locationInput.value = ""; // Clear the input field
+    }
+
+    function findNearestFacility(location) {
+    const sanitizedLocation = location.toLowerCase(); // Convert input to lowercase for case-insensitive comparison
+    const nearestFacility = pinDetails.find(entry => entry.pin.includes(sanitizedLocation));
+    return nearestFacility;
+}
+
+</script>
+
+<script>
+    function redirectToOLX() {
+        // You can customize this function based on your criteria for redirecting to OLX.
+        // For now, let's assume it always redirects.
+        window.location.href = "https://www.olx.com";
+    }
+
+    
+    // ... (your existing script content) ...
+</script>
 
 </body>
 </html>
