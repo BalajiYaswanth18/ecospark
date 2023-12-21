@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECO-SPARK Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         body {
-            background-color: #72d50fa9; 
-            font-family: 'Muli', sans-serif;
+            background: url('./ewaste-aspect-ratio-2000-1200-1024x614.jpg') center/cover no-repeat;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
+            color: #fff;
         }
 
         .main-container {
@@ -23,10 +24,10 @@
         }
 
         .form-container {
-            background-color: rgba(255, 255, 255, 0.8); 
+            background-color: rgba(0, 0, 0, 0.7); 
             border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
             width: 300px;
         }
 
@@ -35,7 +36,7 @@
         }
 
         .title {
-            color: #240628; 
+            color: #fff; 
         }
 
         .social-login ul {
@@ -54,19 +55,26 @@
         .social-login li a {
             display: block;
             padding: 10px;
-            background-color: #072251; 
             color: white;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
+        .social-login li.google a {
+            background-color: #dd4b39; /* Google red */
+        }
+
+        .social-login li.fb a {
+            background-color: #3b5998; /* Facebook blue */
+        }
+
         .social-login li a:hover {
-            background-color: #240628; 
+            background-color: rgba(255, 255, 255, 0.3);
         }
 
         ._or {
-            color: #072251; 
+            color: #fff; 
             font-weight: bold;
             margin: 20px 0;
         }
@@ -75,15 +83,17 @@
             display: block;
             text-align: left;
             margin-bottom: 5px;
-            color: #072251; 
+            color: #fff; 
         }
 
         .the-form input {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
-            border: 1px solid #072251; 
+            border: 1px solid #fff; 
             border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
         }
 
         .the-form input[type="submit"] {
@@ -93,11 +103,11 @@
         }
 
         .the-form input[type="submit"]:hover {
-            background-color: #240628;
+            background-color: #4CAF50; /* Green color */
         }
 
         .form-footer a {
-            color: #072251; 
+            color: #fff; 
             text-decoration: none;
             font-weight: bold;
         }
