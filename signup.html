@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECO-SPARK Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+    background: url('./ewaste-aspect-ratio-2000-1200-1024x614.jpg') center/cover no-repeat;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    width: 300px;
+    text-align: left;
+}
+.signup-form {
+    margin-top: 20px;
+}
+
+.signup-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff; 
+}
+
+.signup-form input {
+    width: calc(100% - 20px); 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #fff; 
+    border-radius: 5px;
+    background-color: white(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.signup-form input[type="submit"] {
+    background-color: #4CAF50; 
+    color: white;
+    cursor: pointer;
+}
+
+.signup-form input[type="submit"]:hover {
+    background-color: #072251; 
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="form-container">
+
+            <div class="form-body">
+
+                <div class="signup-form">
+                    <h2 class="title">Sign Up for ECO-SPARK</h2>
+                    
+                    <form action="signup-success.html" method="POST" class="the-form">
+
+                        <label for="signup-email">Email</label>
+                        <input type="email" name="signup-email" id="signup-email" placeholder="Enter your email">
+
+                        <label for="signup-password">Password</label>
+                        <input type="password" name="signup-password" id="signup-password" placeholder="Enter your password">
+
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm your password">
+
+                        <input type="submit" value="Sign Up">
+
+                    </form>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
