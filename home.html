@@ -376,15 +376,17 @@
     ];
 
     function findFacilities() {
-        const locationInput = document.getElementById("location");
-        const location = locationInput.value.trim();
+    const locationInput = document.getElementById("location");
+    const location = locationInput.value.trim();
 
-        const resultContainer = document.getElementById("result-container");
-        resultContainer.innerHTML = ""; 
+    const resultContainer = document.getElementById("result-container");
+    resultContainer.innerHTML = "";
 
-        const result = findNearestFacility(location);
-        if (result) {
-            resultContainer.innerHTML = "<div class='result-section'>" +
+    const results = findNearestFacilities(location);
+    if (results.length > 0) {
+        results.forEach(result => {
+            const facilityHTML =
+                "<div class='result-section'>" +
                 "<div class='result-title'>Results</div>" +
                 "<div class='result-message'><p>" + result.name + "</p></div>" +
                 "<div class='result-details'>" +
@@ -394,18 +396,22 @@
                 "<div class='facility-info'><strong>Gmaps Location:</strong> <a href='" + result.gmaps + "' target='_blank' class='gmaps-link'>Open in Google Maps</a></div>" +
                 "</div>" +
                 "</div>";
-        } else {
-            resultContainer.innerHTML = "<p>No matching facility found for the entered location.</p>";
-        }
 
-        locationInput.value = ""; 
+            resultContainer.innerHTML += facilityHTML;
+        });
+    } else {
+        resultContainer.innerHTML = "<p>No matching facilities found for the entered location.</p>";
     }
 
-    function findNearestFacility(location) {
-    const sanitizedLocation = location.toLowerCase(); 
-    const nearestFacility = pinDetails.find(entry => entry.pin.includes(sanitizedLocation));
-    return nearestFacility;
+    locationInput.value = "";
 }
+
+function findNearestFacilities(location) {
+    const sanitizedLocation = location.toLowerCase();
+    const matchingFacilities = pinDetails.filter(entry => entry.pin.includes(sanitizedLocation));
+    return matchingFacilities;
+}
+
 
 </script>
 
