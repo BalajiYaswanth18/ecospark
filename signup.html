@@ -8,59 +8,73 @@
     
     <style>
         body {
-    background: url('./ewaste-aspect-ratio-2000-1200-1024x614.jpg') center/cover no-repeat;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    color: #fff;
-}
+            background: url('./ewaste-aspect-ratio-2000-1200-1024x614.jpg') center/cover no-repeat;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #fff;
+        }
 
-.main-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
+        .main-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
-.form-container {
-    background-color: rgba(0, 0, 0, 0.7); 
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    width: 300px;
-    text-align: left;
-}
-.signup-form {
-    margin-top: 20px;
-}
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.7); 
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            width: 300px;
+        }
 
-.signup-form label {
-    display: block;
-    margin-bottom: 5px;
-    color: #fff; 
-}
+        .form-body {
+            margin-bottom: 20px;
+        }
 
-.signup-form input {
-    width: calc(100% - 20px); 
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #fff; 
-    border-radius: 5px;
-    background-color: white(255, 255, 255, 0.3);
-    color: #fff;
-}
+        .title {
+            color: #fff; 
+        }
 
-.signup-form input[type="submit"] {
-    background-color: #4CAF50; 
-    color: white;
-    cursor: pointer;
-}
+        .the-form label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #fff; 
+        }
 
-.signup-form input[type="submit"]:hover {
-    background-color: #072251; 
-}
+        .the-form input {
+            width: 100%;
+            padding: 6px;
+            margin-bottom: 15px;
+            border: 1px solid #fff; 
+            border-radius: 70px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
 
+        .the-form input[type="submit"] {
+            background-color: #072251; 
+            color: white;
+            cursor: pointer;
+        }
+
+        .the-form input[type="submit"]:hover {
+            background-color: #4CAF50; /* Green color */
+        }
+
+        .form-footer a {
+            color: #fff; 
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -69,28 +83,30 @@
         <div class="form-container">
 
             <div class="form-body">
+                <h2 class="title">Sign Up for ECO-SPARK</h2>
 
-                <div class="signup-form">
-                    <h2 class="title">Sign Up for ECO-SPARK</h2>
-                    
-                    <form action="signup-success.html" method="POST" class="the-form">
+               <br>
+                <form action="signup_confirmation.html" method="POST" class="the-form">
 
-                        <label for="signup-email">Email</label>
-                        <input type="email" name="signup-email" id="signup-email" placeholder="Enter your email">
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your full name">
 
-                        <label for="signup-password">Password</label>
-                        <input type="password" name="signup-password" id="signup-password" placeholder="Enter your password">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email">
 
-                        <label for="confirm-password">Confirm Password</label>
-                        <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm your password">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password">
 
-                        <input type="submit" value="Sign Up">
+                    <input type="submit" value="Sign Up">
 
-                    </form>
+                </form>
 
+            </div>
+
+            <div class="form-footer">
+                <div>
+                    <span>Already have an account?</span> <a href="login.html">Log In</a>
                 </div>
-
-
             </div>
         </div>
     </div>
